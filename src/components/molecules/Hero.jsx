@@ -2,6 +2,7 @@ import * as React from "react";
 import iconSuccess2 from "../../assets/images/icons/success2.png";
 import iconSuccess3 from "../../assets/images/icons/success3.png";
 import payments from "../../assets/images/icons/payments.png";
+import infoBlue from "../../assets/images/icons/infoBlue.png";
 import InputField from "../atoms/InputField";
 
 function Heading({ children }) {
@@ -14,12 +15,16 @@ function Heading({ children }) {
 
 function SubHeading() {
   return (
-    <div className="flex flex-col self-end mt-8 text-lg tracking-tighter text-center text-sky-800">
+    <div className="flex flex-col self-end mt-4 text-lg tracking-tighter text-center text-sky-800">
       <div className="font-semibold leading-5">
-        <span className="font-medium text-black">Licensed & Authorized</span>
-        <span className="text-sky-800"> Ministry of the Interior</span>
-        <br />
-        Prefecture approval
+        <div className="font-semibold flex items-center">
+          <img loading="lazy" src={infoBlue} alt="" className="mb-8" />
+          <span className="font-medium text-black">
+            Licensed & Authorized &nbsp;
+          </span>
+          <span className="text-sky-800"> Ministry of the Interior</span>
+        </div>
+        <span className="font-medium text-black">Prefecture approval</span>
         <span className="font-bold text-sky-800"> n°59783</span>
       </div>
     </div>
@@ -87,16 +92,13 @@ function StepIndicator() {
 
   return (
     <div className="flex gap-5 font-semibold text-center text-sky-800 capitalize max-md:flex-wrap">
-      <div className="justify-center px-9 py-4 text-xl bg-white border-2 border-sky-800 border-solid shadow-sm rounded-[39px] max-md:px-5">
-        {steps[0]}
-      </div>
-      <div className="flex flex-auto gap-1 px-5 my-auto text-base leading-6">
-        {steps.slice(1).map((step, index) => (
+      <div className="flex flex-auto my-auto text-base leading-6">
+        {steps.map((step, index) => (
           <React.Fragment key={step}>
             <div className="justify-center px-5 py-2.5 bg-white border border-solid shadow-sm border-zinc-500 border-opacity-20 rounded-[39px] max-md:pl-5">
               {step}
             </div>
-            {index < steps.length - 2 && (
+            {index < steps.length - 1 && (
               <img
                 loading="lazy"
                 src={`{{ext_${6 + index}}}`}
@@ -189,7 +191,7 @@ export default function Hero() {
         <Heading>Welcome !</Heading>
         <SubHeading />
       </header>
-      <main className="mt-2.5 w-full max-md:max-w-full">
+      <main className="w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <LeftSection />
           <RightSection />

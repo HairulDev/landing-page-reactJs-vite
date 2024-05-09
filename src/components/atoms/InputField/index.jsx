@@ -39,7 +39,7 @@ const InputField = ({
           onChange={onChange}
           type="text"
           placeholder={placeholder}
-          className="my-auto w-full text-xl font-medium tracking-tighter leading-5 text-center text-black capitalize  bg-sky-800 bg-opacity-10 "
+          className="my-auto w-full text-xl font-medium tracking-tighter leading-5 text-center text-black capitalize  bg-sky-800 bg-opacity-0"
         />
         {isFormatValid && (
           <div className="flex overflow-hidden relative flex-col justify-center items-center aspect-square w-[37px]">
